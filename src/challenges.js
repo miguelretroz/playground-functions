@@ -66,19 +66,23 @@ function catAndMouse(mouse, cat1, cat2) {
 }
 
 // Desafio 8
+function numberChecker(number, array) {
+  if ((number % 3 === 0) && ((number % 5) === 0)) {
+    array.push('fizzBuzz');
+  } else if ((number % 3) === 0) {
+    array.push('fizz');
+  } else if ((number % 5) === 0) {
+    array.push('buzz');
+  } else {
+    array.push('bug!');
+  }
+}
+
 function fizzBuzz(numbers) {
   // seu código aqui
   let numbersMessages = [];
   for (let number of numbers) {
-    if ((number % 3 === 0) && ((number % 5) === 0)) {
-      numbersMessages.push('fizzBuzz');
-    } else if ((number % 3) === 0) {
-      numbersMessages.push('fizz');
-    } else if ((number % 5) === 0) {
-      numbersMessages.push('buzz');
-    } else {
-      numbersMessages.push('bug!');
-    }
+    numberChecker(number, numbersMessages);
   }
   return numbersMessages;
 }
