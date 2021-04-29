@@ -122,7 +122,6 @@ function encode(string) {
   return wordEncoded;
 }
 
-console.log(encode('hi there!'));
 function decode(string) {
   // seu código aqui
   let wordDecoded = '';
@@ -132,7 +131,6 @@ function decode(string) {
   return wordDecoded;
 }
 
-console.log(decode(encode('hi there!')));
 module.exports = {
   calcArea,
   catAndMouse,
