@@ -45,21 +45,28 @@ function isNotTen(phoneNumber) {
   return result;
 }
 
-function numbersCount(phoneNumber) {
-  let result = true;
-  for (let number of phoneNumber) {
-    let count = 0;
-    for (let number02 of phoneNumber) {
-      if (number === number02) {
-        count += 1;
-      }
-    }
-    if (count >= 3) {
-      result = false;
-      break;
+function numberCount(number, phoneNumber) {
+  let count = 0;
+  for (let numberComp of phoneNumber) {
+    if (number === numberComp) {
+      count += 1;
     }
   }
-  return result;
+  return count;
+}
+
+function numbersLoopCount(phoneNumber) {
+  for (let number of phoneNumber) {
+    // for (let number02 of phoneNumber) {
+    //   if (number === number02) {
+    //     count += 1;
+    //   }
+    // }
+    if (numberCount(number, phoneNumber) < 2) {
+      return false;
+    }
+  }
+  return true;
 }
 
 function phoneNumberConstruction(phoneNumber) {
@@ -81,7 +88,7 @@ function generatePhoneNumber(phoneNumber) {
   // seu código aqui
   let result = 'Array com tamanho incorreto.';
   if (isEleven(phoneNumber)) {
-    if (isPositive(phoneNumber) && isNotTen(phoneNumber) && numbersCount(phoneNumber)) {
+    if (isPositive(phoneNumber) && isNotTen(phoneNumber) && numbersLoopCount(phoneNumber)) {
       result = phoneNumberConstruction(phoneNumber);
     } else {
       result = 'não é possível gerar um número de telefone com esses valores';
