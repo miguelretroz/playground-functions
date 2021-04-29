@@ -62,23 +62,35 @@ function numbersCount(phoneNumber) {
   return result;
 }
 
-// Desafio 11
-function generatePhoneNumber(phoneNumber) {
-  // seu código aqui
-  let result;
-  if (isEleven(phoneNumber)) {
-    if (isPositive(phoneNumber) && isNotTen(phoneNumber) && numbersCount(phoneNumber)) {
-      
+function phoneNumberConstruction(phoneNumber) {
+  let result = '(';
+  for (let index = 0; index < phoneNumber.length; index += 1) {
+    if (index === 1) {
+      result += `${phoneNumber[index]}) `;
+    } else if (index === 6) {
+      result += `${phoneNumber[index]}-`;
     } else {
-      result = 'não é possível gerar um número de telefone com esses valores';
+      result += phoneNumber[index];
     }
-  } else {
-    result = 'Array com tamanho incorreto.';
   }
   return result;
 }
 
-console.log(generatePhoneNumber([ 2, 3, 4, 5, 6, 7, 8, 9, 0, 1]));
+// Desafio 11
+function generatePhoneNumber(phoneNumber) {
+  // seu código aqui
+  let result = 'Array com tamanho incorreto.';
+  if (isEleven(phoneNumber)) {
+    if (isPositive(phoneNumber) && isNotTen(phoneNumber) && numbersCount(phoneNumber)) {
+      result = phoneNumberConstruction(phoneNumber);
+    } else {
+      result = 'não é possível gerar um número de telefone com esses valores';
+    }
+  }
+  return result;
+}
+
+console.log(generatePhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1]));
 
 // Desafio 12
 function triangleCheck() {
