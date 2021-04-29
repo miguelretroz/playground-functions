@@ -90,9 +90,33 @@ function generatePhoneNumber(phoneNumber) {
   return result;
 }
 
+function triangleLineLower(lineA, lineB, lineC) {
+  let sumBC = lineB + lineC;
+  let sumAC = lineA + lineC;
+  let sumAB = lineA + lineB;
+  if ((lineA < sumBC) && (lineB < sumAC) && (lineC < sumAB)) {
+    return true;
+  }
+  return false;
+}
+
+function triangleLineHigher(lineA, lineB, lineC) {
+  let difBC = Math.abs(lineB - lineC);
+  let difAC = Math.abs(lineA - lineC);
+  let difAB = Math.abs(lineA - lineB);
+  if ((lineA > difBC) && (lineB > difAC) && (lineC > difAB)) {
+    return true;
+  }
+  return false;
+}
+
 // Desafio 12
 function triangleCheck(lineA, lineB, lineC) {
   // seu código aqui
+  if (triangleLineLower(lineA, lineB, lineC) && triangleLineHigher(lineA, lineB, lineC)) {
+    return true;
+  }
+  return false;
 }
 
 // Desafio 13
