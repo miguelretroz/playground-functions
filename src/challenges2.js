@@ -126,9 +126,20 @@ function triangleCheck(lineA, lineB, lineC) {
   return false;
 }
 
+function sumDrinksCount(numbers) {
+  let sum = 0;
+  for (let number of numbers) {
+    sum += parseInt(number, 10);
+  }
+  return sum;
+}
+
 // Desafio 13
-function hydrate() {
+function hydrate(drinks) {
   // seu código aqui
+  let numbers = drinks.match(/\d+/g);
+
+  return `${sumDrinksCount(numbers)} copos de água`;
 }
 
 module.exports = {
