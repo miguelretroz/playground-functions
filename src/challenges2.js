@@ -62,7 +62,7 @@ function numbersLoopCount(phoneNumber) {
     //     count += 1;
     //   }
     // }
-    if (numberCount(number, phoneNumber) < 2) {
+    if ((numberCount(number, phoneNumber)) > 2) {
       return false;
     }
   }
