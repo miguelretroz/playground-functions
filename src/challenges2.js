@@ -139,6 +139,9 @@ function hydrate(drinks) {
   // seu código aqui
   let numbers = drinks.match(/\d+/g);
 
+  if (sumDrinksCount(numbers) === 1) {
+    return `${sumDrinksCount(numbers)} copo de água`;
+  }
   return `${sumDrinksCount(numbers)} copos de água`;
 }
 
