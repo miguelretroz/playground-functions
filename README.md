@@ -7,7 +7,7 @@
   Este foi o segundo projeto desenvolvido na Trybe, o objetivo era aplicar os conhecimentos em JavaScript até então adquiridos, implementando a lógica de diversas funções.
 <p>
 
-## 🛠️ Contruído com
+## 🛠️ Construído com
 
 🔹<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
   <img align="center" src="./public/js-logo.svg" height="20">
